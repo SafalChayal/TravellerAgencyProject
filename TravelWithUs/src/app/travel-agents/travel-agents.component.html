@@ -1,0 +1,18 @@
+<h1>Travel Agents</h1>
+
+<div *ngIf="travelingAgents.length === 0">
+  <p>Loading data...</p>
+</div>
+
+<div *ngIf="travelingAgents.length > 0">
+  <ul>
+    <li *ngFor="let agent of travelingAgents">
+      <h2>{{ agent.first_Name }}</h2>
+      <p> {{ agent.title }}</p>
+      <p>Age: {{ agent.age }}</p>
+      <p>City: {{ agent.city }}</p>
+      <p>State: {{ agent.state }}</p>
+      <p>Country: {{ agent.country }}</p>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="d-flex justify-content-center">
+    <marquee behavior="alternate" direction="right" class="display-3 mt-5 marquee-text">Please</marquee>
+    <marquee behavior="alternate" direction="left" class="display-3 mt-5 marquee-text">Login</marquee>
+  </div>
+  
+  
+<div class="container mt-5 ">
+    <div class="card card-w mb-5" style="padding:20px;">
+        <form (ngSubmit)="login()">
+            <input type="email" [(ngModel)]="userEmail" name="userEmail" id="userEmail" class="form-control mb-3"
+                placeholder="Enter your Email">
+
+            <input type="password" [(ngModel)]="password" name="password" id="password" class="form-control mb-3"
+                placeholder="Enter your Password">
+
+            <input type="submit" value="Login" class="btn btn-primary form-control rounded-0">
+        </form>
+    </div>
+</div>
+<app-footerc></app-footerc>

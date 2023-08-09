@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+
+
+<div class="container-fluid text-centert-5 ">
+    <div class="row" *ngFor="let tour of doc">
+      <img class="img-md" width="40%" src="{{ tour.image }}" >
+      <p>{{ tour.description }}</p>
+  </div>
+</div>
+
+<app-footerc></app-footerc>

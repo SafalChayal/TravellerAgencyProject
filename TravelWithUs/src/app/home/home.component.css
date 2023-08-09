@@ -1,0 +1,52 @@
+
+
+.carousel-image {
+  height: 600px; 
+  object-fit: cover;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image-text {
+    position: absolute;
+    top: 30%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:lightgoldenrodyellow;
+  }
+  
+  .image-text2{
+    position: absolute;
+    top: 30%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:lightgoldenrodyellow;
+  }
+  .image-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .image-text p {
+    font-size: 28px;
+  }
+  .large-paragraph {
+    font-size: 18px;
+  }
+
+
+
+
+  .img-set{
+    background-image: url("https://mdbcdn.b-cdn.net/img/new/slides/017.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: aliceblue;
+  }
+

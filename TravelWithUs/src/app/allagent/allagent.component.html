@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid mt-5 mb-1">
+    <div class="table-responsive">
+        <table class="table" style="border: 2;">
+            <thead>
+                <tr>
+                    <th>TravellingAgent_Id</th>
+                    <th>Image</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Title</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of doc">
+                    <td>{{ c.travellingAgent_Id }}</td>
+                    <td><img class="rounded-circle" [src]="c.image_Url" alt="Agent Image" width="100"></td>
+                    <td>{{ c.first_Name }}</td>
+                    <td>{{ c.last_Name }}</td>
+                    <td>{{ c.title }}</td>
+                    <td>{{ c.age }}</td>
+                    <td>{{ c.city }}</td>
+                    <td>{{ c.state }}</td>
+                    <td>{{ c.country }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<app-footerc></app-footerc>

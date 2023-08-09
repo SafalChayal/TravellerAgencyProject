@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<div class="container text-center mt-5">
+  <div>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by Tour Name">
+    <button class="btn btn-primary" (click)="searchTours()">Search</button>
+  </div>
+
+  <!-- Tour cards -->
+  <div class="tour-cards">
+    <div class="tour-card" *ngFor="let tour of filteredTours">
+      <img class="img-md" width="40%" [src]="tour.image_Url" [alt]="tour.tour_Name">
+      <h2>{{ tour.tour_Name }}</h2>
+      <p>{{ tour.tour_Description }}</p>
+      <p>Price: {{ tour.tour_Price | currency }}</p>
+      <p>Duration: {{ tour.tourDays }} days and {{ tour.tourNights }} nights</p>
+      <p>From: {{ tour.startDate | date }}</p>
+      <p>To: {{ tour.endDate | date }}</p>
+      <button class="btn btn-primary" (click)="selectTourForBooking(tour)">Book</button>
+      <hr>
+    </div>
+  </div>
+
+  <!-- Booking form -->
+  <div class="booking-form" *ngIf="selectedTour">
+    <h2>Book {{ selectedTour.tour_Name }}</h2>
+    <form [formGroup]="bookingForm" (ngSubmit)="submitBookingForm()">
+      <div>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" formControlName="name" required>
+      </div>
+      <div>
+        <label>Tour Name:</label>
+        <span>{{ selectedTour.tour_Name }}</span>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+<app-footerc></app-footerc>

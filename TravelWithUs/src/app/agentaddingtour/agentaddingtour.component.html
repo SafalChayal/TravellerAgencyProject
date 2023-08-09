@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="container mt-5 text-light">
+    <h2 class="mb-4">Add Tour</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="tourName">Tour Name</label>
+        <input type="text" class="form-control" id="tourName" formControlName="tour_Name" required>
+      </div>
+      <div class="form-group">
+        <label for="tourDescription">Tour Description</label>
+        <textarea class="form-control" id="tourDescription" formControlName="tour_Description" rows="4"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="tourPrice">Tour Price</label>
+          <input type="number" class="form-control" id="tourPrice" formControlName="tour_Price" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="imageFile">Image Upload</label>
+          <input type="file" class="form-control-file" id="imageFile" (change)="onImageChange($event)" accept="image/*">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="tourDays">Tour Days</label>
+          <input type="number" class="form-control" id="tourDays" formControlName="tourDays" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="tourNights">Tour Nights</label>
+          <input type="number" class="form-control" id="tourNights" formControlName="tourNights" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contactDetails">Contact Details</label>
+        <input type="text" class="form-control" id="contactDetails" formControlName="contactDetails" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="startDate">Start Date</label>
+          <input type="date" class="form-control" id="startDate" formControlName="startDate" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="endDate">End Date</label>
+          <input type="date" class="form-control" id="endDate" formControlName="endDate" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="food">Food</label>
+        <input type="text" class="form-control" id="food" formControlName="food" required>
+      </div>
+      <div class="form-group">
+        <label for="accomodation">Accomodation</label>
+        <input type="text" class="form-control" id="accomodation" formControlName="accomodation" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  
+</div>
+<app-footerc></app-footerc>

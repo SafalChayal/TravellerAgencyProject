@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+    <form [formGroup]="registrationForm" class="row g-3 form" (ngSubmit)="onSubmit()">
+
+    <div class="col-md-12  text-center">
+        <label for="image">Image:</label>
+        <input type="file" id="image" (change)="onImageChange($event)" class="form-control">
+        <div *ngIf="imageFile && imageFile.size > 2e+6" class="invalid-feedback">Image size should be less than 2MB.</div>
+      </div>
+    
+      <div class="col-md-12 text-center">
+        <label for="description">Description:</label>
+        <input type="description" id="description" formControlName="description" class="form-control">
+        <div *ngIf="registrationForm.get('description')?.invalid && registrationForm.get('description')?.touched"
+          class="invalid-feedback">
+          Description is required.
+        </div>
+      </div>
+      <div class="col-md-12 text-center">
+        <button type="submit" [disabled]="registrationForm.invalid || (imageFile && imageFile.size > 2e+6)"
+          class="btn btn-primary">Post</button>
+      </div>
+    </form>
+</div>
+<app-footerc></app-footerc>

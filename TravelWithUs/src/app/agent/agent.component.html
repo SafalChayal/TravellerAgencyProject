@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<video autoplay loop id="video">
+  <source src="assets/agent1.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+<div class="container">
+  <form [formGroup]="registrationForm" class="row g-3 form" (ngSubmit)="onSubmit()">
+    <div class="col-md-6">
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" formControlName="first_Name" class="form-control">
+      <div *ngIf="registrationForm.get('first_Name')?.invalid && registrationForm.get('first_Name')?.touched"
+        class="invalid-feedback">
+        First Name is required.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" formControlName="last_Name" class="form-control">
+      <div *ngIf="registrationForm.get('last_Name')?.invalid && registrationForm.get('last_Name')?.touched"
+        class="invalid-feedback">
+        Last Name is required.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="title">Title:</label>
+      <select id="title" formControlName="title" class="form-control">
+        <option value="">Select a title</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="age">Age:</label>
+      <input type="number" id="age" formControlName="age" class="form-control">
+      <div *ngIf="registrationForm.get('age')?.invalid && registrationForm.get('age')?.touched" class="invalid-feedback">
+        Age is required and must be a positive number.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="city">City:</label>
+      <input type="text" id="city" formControlName="city" class="form-control">
+      <div *ngIf="registrationForm.get('city')?.invalid && registrationForm.get('city')?.touched" class="invalid-feedback">
+        City is required.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="state">State:</label>
+      <input type="text" id="state" formControlName="state" class="form-control">
+      <div *ngIf="registrationForm.get('state')?.invalid && registrationForm.get('state')?.touched" class="invalid-feedback">
+        State is required.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="country">Country:</label>
+      <input type="text" id="country" formControlName="country" class="form-control">
+      <div *ngIf="registrationForm.get('country')?.invalid && registrationForm.get('country')?.touched"
+        class="invalid-feedback">
+        Country is required.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="userEmail" class="form-control">
+      <div *ngIf="registrationForm.get('userEmail')?.invalid && registrationForm.get('userEmail')?.touched"
+        class="invalid-feedback">
+        Email is required.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control">
+      <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched"
+        class="invalid-feedback">
+        Password is required.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="image">Image:</label>
+      <input type="file" id="image" (change)="onImageChange($event)" class="form-control">
+      <div *ngIf="imageFile && imageFile.size > 2e+6" class="invalid-feedback">Image size should be less than 2MB.</div>
+    </div>
+    <div class="col-md-12 text-center">
+      <button type="submit" [disabled]="registrationForm.invalid || (imageFile && imageFile.size > 2e+6)"
+        class="btn btn-primary">Register</button>
+    </div>
+  </form>
+</div>
